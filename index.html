@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Proctoring System</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.20.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+  <h1>Online Exam Proctoring</h1>
+
+  <div class="row">
+    <!-- Video Section -->
+    <div id="videoWrap">
+      <video id="video" autoplay muted></video>
+      <canvas id="overlay"></canvas>
+
+      <div id="controls">
+        <input id="candidateName" placeholder="Candidate Name"/>
+        <button id="startBtn">Start Session</button>
+        <button id="stopBtn" class="danger" disabled>Stop Session</button>
+        <button id="downloadCsv" disabled>Download CSV</button>
+        <button id="downloadPdf" disabled>Download PDF</button>
+      </div>
+
+      <div class="stat">
+        ⏱️ Session Time: <span id="sessionTime">00:00</span><br>
+        👁️ Focus Lost: <span id="focusCount">0</span><br>
+        ⚠️ Suspicious Events: <span id="suspCount">0</span>
+      </div>
+      <p class="small" id="status">Loading models...</p>
+    </div>
+
+    <!-- Event Log -->
+    <div id="log"></div>
+
+    <!-- Interviewer Alert Panel -->
+    <div id="interviewerPanel">
+      <h3>🔔 Interviewer Alerts</h3>
+      <div id="interviewerAlerts"></div>
+    </div>
+  </div>
+
+  <!-- Custom Alert Popup -->
+  <div id="customAlert" class="hidden">
+    <p id="alertMessage"></p>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
