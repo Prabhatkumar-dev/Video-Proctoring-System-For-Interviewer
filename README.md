@@ -49,12 +49,12 @@ It detects whether a candidate is focused and flags unauthorized items in real-t
 
 
 ### For running in Vs Code : 
-1>  Run a local server (do not open via file://): [ follow step 2 and 3 ]
-2>  For Python: {Run ->} python -m http.server 8000
-    or 
-    For Node:  {Run -> } npx http-server .
-3>  Open http://localhost:8000/index.html in Chrome or Edge (recommended).
-4>  Allow the browser to access Camera and Microphone when prompted.
+- 1>  Run a local server (do not open via file://): [ follow step 2 and 3 ]
+- 2>  For Python: {Run ->} python -m http.server 8000
+-    or 
+-    For Node:  {Run -> } npx http-server .
+- 3>  Open http://localhost:8000/index.html in Chrome or Edge (recommended).
+- 4>  Allow the browser to access Camera and Microphone when prompted.
 
 ### ⿡ Clone the Repository
 ```bash
